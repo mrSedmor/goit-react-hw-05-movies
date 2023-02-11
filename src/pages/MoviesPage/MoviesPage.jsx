@@ -7,8 +7,8 @@ import css from './movies-page.module.scss';
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams({});
-  const params = Object.fromEntries(searchParams);
-  const { query = '', newQuery = '', page = 1 } = params;
+  const searchParamsObj = Object.fromEntries(searchParams);
+  const { query = '', newQuery = '', page = 1 } = searchParamsObj;
 
   useEffect(() => {
     if (!query) {
@@ -19,7 +19,7 @@ const Movies = () => {
 
   const handleInput = ({ target: { name, value } }) => {
     const normalizedValue = value.trim().toLowerCase();
-    const newParams = { ...params };
+    const newParams = { ...searchParamsObj };
     if (normalizedValue) {
       newParams[name] = value;
     } else {
@@ -33,7 +33,7 @@ const Movies = () => {
     if (!newQuery || newQuery === query) {
       return;
     }
-    setSearchParams({ page: 1, query: newQuery, ...params });
+    setSearchParams({ ...searchParamsObj, page: 1, query: newQuery });
   };
 
   return (
