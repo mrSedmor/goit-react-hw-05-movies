@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+}
+
+.rating {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding: 5px 10px 6px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+
+  background-color: #0303cbc0;
+  color: #ffffff;
+}
+
+.description {
+  padding: 16px;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.genres {
+  font-weight: 500;
+  color: #0303cb;
+}
