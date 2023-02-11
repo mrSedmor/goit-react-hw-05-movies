@@ -14,12 +14,12 @@
   }
 }
 
-.item {
+.card {
   --columns: 1;
   width: calc((100% + 16px) / var(--columns) - 16px);
   max-width: 250px;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: $background-color-secondary;
 
   @include mq($width-mobile) {
     --columns: 2;
@@ -28,4 +28,28 @@
   @include mq($width-tablet) {
     --columns: 3;
   }
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+}
+
+.description {
+  padding: 16px;
+}
+
+.name {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.character {
+  margin: 0;
+}
+
+.caption {
+  font-weight: 500;
 }

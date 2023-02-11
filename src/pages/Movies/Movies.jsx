@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import api from 'services/api';
-import MovieList from 'components/MovieList';
+import MovieList from 'components/MovieList/MovieList';
+import css from './movies.module.scss';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -38,14 +39,17 @@ const Movies = () => {
   return (
     <div>
       <h2>Find a movie:</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input
           type="text"
+          className={css.input}
           name="newQuery"
           onChange={handleInput}
           value={newQuery}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={css.button}>
+          Search
+        </button>
       </form>
 
       <MovieList movies={movies} />

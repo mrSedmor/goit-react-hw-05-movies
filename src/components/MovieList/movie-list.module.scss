@@ -8,14 +8,20 @@
   padding: 0;
   list-style: none;
   justify-content: center;
+
+  @include mq($width-mobile) {
+    justify-content: left;
+  }
 }
 
-.card {
+.item {
   --columns: 1;
   width: calc((100% + 16px) / var(--columns) - 16px);
   max-width: 250px;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: $background-color-secondary;
+
+  transition: transform 250ms;
 
   @include mq($width-mobile) {
     --columns: 2;
@@ -26,26 +32,7 @@
   }
 }
 
-.poster {
-  width: 100%;
-  aspect-ratio: 2/3;
-}
-
-.description {
-  padding: 16px;
-}
-.name {
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  font-weight: 500;
-  // text-align: center;
-}
-
-.character {
-  margin: 0;
-}
-
-.caption {
-  font-weight: 500;
+.item:hover,
+.item:focus {
+  transform: scale(1.05);
 }

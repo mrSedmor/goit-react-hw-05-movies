@@ -1,0 +1,14 @@
+@import 'src/sass/utils/_variables.scss';
+@import 'src/sass/utils/_mixins.scss';
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  @include mq($width-mobile) {
+    max-width: $width-mobile;
+  }
+
+  @include mq($width-tablet) {
+    max-width: $width-tablet;
+  }
+}

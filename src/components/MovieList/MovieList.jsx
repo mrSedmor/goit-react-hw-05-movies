@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { useLocation, NavLink } from 'react-router-dom';
-import MovieCard from './MovieCard';
+import MovieCard from './MovieCard/MovieCard';
 import css from './movie-list.module.scss';
 
 const MovieList = ({ movies }) => {
@@ -18,3 +19,13 @@ const MovieList = ({ movies }) => {
 };
 
 export default MovieList;
+
+MovieList.defaultValues = {
+  movies: [],
+};
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.number.isRequired })
+  ),
+};

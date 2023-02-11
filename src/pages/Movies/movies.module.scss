@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  gap: 10px;
+}
+
+.input,
+.button {
+  height: 35px;
+  padding: 0px 10px 2px;
+  font-weight: 500;
+}
+
+.input {
+  flex-grow: 1;
+  max-width: 400px;
+}

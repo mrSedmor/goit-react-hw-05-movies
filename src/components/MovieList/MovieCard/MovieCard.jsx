@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import api from 'services/api';
 import { formatGenres } from 'services/gernres';
 import moviePosterPlaceholder from 'images/placeholder-poster.svg';
@@ -29,3 +30,13 @@ const MovieCard = ({
 };
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  movieInfo: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    release_date: PropTypes.string.isRequired,
+    genre_ids: PropTypes.arrayOf(PropTypes.number).isRequired,
+  }),
+};

@@ -1,17 +1,4 @@
-@import 'src/sass/utils/_variables.scss';
-@import 'src/sass/utils/_mixins.scss';
-
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-  @include mq($width-mobile) {
-    max-width: $width-mobile;
-  }
-
-  @include mq($width-tablet) {
-    max-width: $width-tablet;
-  }
-}
+@import 'src/sass/utils/variables';
 
 .header {
   display: flex;
@@ -30,13 +17,14 @@
   font-weight: 500;
   color: inherit;
   text-decoration: inherit;
+  transition: color 250ms;
 
   &:global(.active) {
-    color: #c03838;
+    color: $accent-color;
     text-decoration: underline;
   }
   &:hover:not(:global(.active)),
   &:focus:not(:global(.active)) {
-    color: #c03838;
+    color: $accent-color;
   }
 }
