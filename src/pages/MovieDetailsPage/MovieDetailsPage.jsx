@@ -7,7 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import api from 'services/api';
-import css from './movie-details.module.scss';
+import css from './movie-details-page.module.scss';
 import posterPlaceholder from 'images/placeholder-poster.svg';
 import { FaArrowLeft } from 'react-icons/fa';
 

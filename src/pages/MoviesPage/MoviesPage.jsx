@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import api from 'services/api';
 import MovieList from 'components/MovieList/MovieList';
-import css from './movies.module.scss';
+import css from './movies-page.module.scss';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
