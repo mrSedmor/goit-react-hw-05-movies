@@ -16,14 +16,21 @@ const MovieCard = ({
   const genres = formatGenres(genre_ids);
   const rating = Math.round(vote_average * 10);
   return (
-    <div className={css.card}>
-      <img className={css.poster} src={posterHref} alt={title} loading="lazy" />
-      <span className={css.rating}>{rating}%</span>
+    <div>
+      <div className={css.posterWrapper}>
+        <img
+          className={css.poster}
+          src={posterHref}
+          alt={title}
+          loading="lazy"
+        />
+        <div className={css.rating}>{rating}%</div>
+        <div className={css.year}>{year}</div>
+      </div>
+
       <div className={css.description}>
         <p className={css.title}>{title}</p>
-        <p className={css.genres}>
-          {genres} | {year}
-        </p>
+        <p className={css.genres}> {genres} </p>
       </div>
     </div>
   );

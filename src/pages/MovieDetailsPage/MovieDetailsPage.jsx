@@ -21,7 +21,7 @@ const MovieDetails = () => {
     api
       .getMovieDetails({ movieId })
       .then(({ data }) => setDetails(data))
-      .catch(error => setError(error.message));
+      .catch(error => setError(error?.data?.message ?? error.message));
   }, [movieId]);
 
   if (error) {
