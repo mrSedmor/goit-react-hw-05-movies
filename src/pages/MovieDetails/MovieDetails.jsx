@@ -1,5 +1,11 @@
 import { Suspense, useState, useEffect } from 'react';
-import { Outlet, useParams, NavLink, useLocation } from 'react-router-dom';
+import {
+  Outlet,
+  useParams,
+  Link,
+  NavLink,
+  useLocation,
+} from 'react-router-dom';
 import api from 'services/api';
 import css from './movie-details.module.scss';
 import posterPlaceholder from 'images/placeholder-poster.svg';
@@ -32,9 +38,9 @@ const MovieDetails = () => {
   const genreList = genres ? genres.map(({ name }) => name).join(', ') : '';
   return (
     <main className={css.content}>
-      <NavLink to={fromHref} className={css.linkBack}>
+      <Link to={fromHref} className={css.linkBack}>
         <FaArrowLeft /> Back to movies list
-      </NavLink>
+      </Link>
       <div className={css.wrapper}>
         <img
           className={css.poster}
