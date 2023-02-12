@@ -38,7 +38,7 @@ const getMovies = ({ page = 1, query }) => {
 const getMovieDetails = ({ movieId }) => {
   return instance.get(`/movie/${movieId}`).catch(error => {
     if ((error.response.status = 404)) {
-      throw Error(`Sorry. There is no movie with id ${movieId}`);
+      throw Error(`Sorry. There is no movie with id ${movieId}.`);
     }
 
     throw error;

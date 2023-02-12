@@ -5,6 +5,7 @@ import {
   Link,
   NavLink,
   useLocation,
+  useNavigate,
 } from 'react-router-dom';
 import api from 'services/api';
 import css from './movie-details-page.module.scss';
@@ -17,6 +18,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState();
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     api
       .getMovieDetails({ movieId })
@@ -24,8 +26,21 @@ const MovieDetails = () => {
       .catch(error => setError(error?.data?.message ?? error.message));
   }, [movieId]);
 
+  useEffect(() => {
+    if (!error) {
+      return;
+    }
+    const timeoutId = setTimeout(() => navigate(fromHref), 2000);
+    return () => clearTimeout(timeoutId);
+  }, [error]);
+
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <>
+        <p>{error}</p>
+        <p>Redirecting...</p>
+      </>
+    );
   }
 
   if (!details) {
