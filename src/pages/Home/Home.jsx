@@ -7,7 +7,8 @@ const Home = () => {
   useEffect(() => {
     api
       .getTrending({ page: 1 })
-      .then(({ data }) => setTrendingMovies(data.results));
+      .then(({ data }) => setTrendingMovies(data.results))
+      .catch(() => null);
   }, []);
 
   return (
