@@ -149,9 +149,10 @@ export const genresDictiorary = genres.reduce(
   { other: 'Other' }
 );
 
-export function formatGenres(genre_ids) {
-  if (genre_ids.length > 3) {
-    genre_ids.splice(2, genre_ids.length - 2, 'other');
+export function formatGenres(argGenreIds) {
+  const genreIds = [...argGenreIds];
+  if (genreIds.length > 3) {
+    genreIds.splice(2, genreIds.length - 2, 'other');
   }
-  return genre_ids.map(genreId => genresDictiorary[genreId]).join(', ');
+  return genreIds.map(genreId => genresDictiorary[genreId]).join(', ');
 }
