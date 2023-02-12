@@ -32,7 +32,7 @@ const MovieDetails = () => {
     }
     const timeoutId = setTimeout(() => navigate(fromHref), 2000);
     return () => clearTimeout(timeoutId);
-  }, [error]);
+  }, [error, fromHref, navigate]);
 
   if (error) {
     return (
