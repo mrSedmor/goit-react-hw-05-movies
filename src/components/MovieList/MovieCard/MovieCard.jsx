@@ -12,7 +12,7 @@ const MovieCard = ({
     size: 400,
     placeholder: moviePosterPlaceholder,
   });
-  const year = new Date(release_date).getFullYear();
+  const year = release_date ? new Date(release_date).getFullYear() : null;
   const genres = formatGenres(genre_ids);
   const rating = Math.round(vote_average * 10);
   return (
@@ -25,7 +25,7 @@ const MovieCard = ({
           loading="lazy"
         />
         <div className={css.rating}>{rating}%</div>
-        <div className={css.year}>{year}</div>
+        {Boolean(year) && <div className={css.year}>{year}</div>}
       </div>
 
       <div className={css.description}>

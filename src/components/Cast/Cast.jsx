@@ -21,13 +21,13 @@ const Cast = () => {
 
   return (
     <ul className={css.list}>
-      {cast.map(({ id, character, name, profile_path, gender }) => {
+      {cast.map(({ cast_id, character, name, profile_path, gender }) => {
         const posterUrl = api.getPosterUrl({
           path: profile_path,
           placeholder: getPlaceholder(gender),
         });
         return (
-          <li key={id} className={css.card}>
+          <li key={cast_id} className={css.card}>
             <img className={css.poster} src={posterUrl} alt={name} />
             <div className={css.description}>
               <p className={css.name}>{name}</p>

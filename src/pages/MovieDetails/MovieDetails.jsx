@@ -14,7 +14,11 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 const MovieDetails = () => {
   const location = useLocation();
-  const fromHref = location?.state?.from ?? '/';
+
+  // Запам'ятаємо посилання "назад" так, щом воно не змінювалось.
+  // Або для Cast і Review треба fromHref передати в state={{from:fromHref}}
+  const [fromHref] = useState(() => location?.state?.from ?? '/');
+
   const { movieId } = useParams();
   const [details, setDetails] = useState();
   const [error, setError] = useState(null);
