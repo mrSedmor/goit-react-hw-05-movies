@@ -37,7 +37,7 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <main>
       <h2>Find a movie:</h2>
       <form onSubmit={handleSubmit} className={css.form}>
         <input
@@ -53,7 +53,7 @@ const Movies = () => {
       </form>
 
       <MovieList movies={movies} />
-    </div>
+    </main>
   );
 };
 
